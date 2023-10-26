@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS only -->
+    <!-- <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    /> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Landing Page</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      .header {
+        height: 100;
+        background-color: white;
+        padding-left: 100px;
+      }
+
+      .header img {
+        width: 90px;
+      }
+      .landing {
+        background-image: url("./assets/COP\ banner\ image.jpg");
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        color: white;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-right: 40%;
+      }
+
+      .heading {
+        font-size: 36px;
+        font-weight: bold;
+      }
+
+      .sub-heading {
+        font-size: 24px;
+      }
+
+      .description {
+        font-size: 18px;
+      }
+
+      .btn {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        text-transform: uppercase;
+        text-decoration: none;
+      }
+
+      /* Media queries for responsiveness */
+      @media (max-width: 768px) {
+        .heading {
+          font-size: 28px;
+        }
+
+        .sub-heading {
+          font-size: 20px;
+        }
+
+        .description {
+          font-size: 16px;
+        }
+
+        .btn {
+          padding: 8px 16px;
+        }
+      }
+
+      /* ////////////////////////////////////////////////////////////////////////////////////// */
+      #featuredProjects .container {
+        padding-top: 5rem;
+        padding-bottom: 2rem;
+        width: 80%;
+        /* width: 65%; */
+      }
+      @media screen and (min-width: 520px) and (max-width: 768px) {
+        #featuredProjects .container {
+          width: 100%;
+          padding-bottom: 0;
+        }
+      }
+      @media screen and (max-width: 520px) {
+        #featuredProjects .container {
+          width: 93%;
+          padding: 3rem 0 0 0;
+        }
+      }
+      @media screen and (min-width: 1700px) {
+        #featuredProjects .container {
+          width: 100%;
+        }
+      }
+      #featuredProjects .container #arrowRight3,
+      #featuredProjects .container #arrowLeft3 {
+        position: relative;
+        display: none;
+        z-index: 0;
+      }
+      #featuredProjects .container h6 {
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        font-family: "subheading_font" !important;
+      }
+      #featuredProjects .container h6 hr {
+        width: 25%;
+        margin-left: 5rem;
+        margin-top: -0.35rem;
+      }
+      #featuredProjects .container h2 {
+        color: #071d35;
+        text-transform: uppercase;
+        font-family: "heading_font" !important;
+      }
+      #featuredProjects .container .carouselBtn3 {
+        background-color: transparent;
+        border: none;
+      }
+      #featuredProjects .container .carouselBtn3 i {
+        font-size: 2rem;
+        transform: scaleX(1.7);
+        margin: 0 0.7rem;
+      }
+      #featuredProjects .container .img_border_landscape {
+        width: 100%;
+        height: 30rem;
+        overflow: hidden;
+        position: relative;
+      }
+
+      #featuredProjects .container .img_border_landscape img {
+        width: 100%;
+        height: 100%;
+        transition: 0.3s;
+        /*-o-object-fit: cover;*/
+        /*   object-fit: cover;*/
+      }
+      #featuredProjects .container .img_border_landscape:hover img,
+      #featuredProjects .container .img_border:hover img {
+        transform: scale(1.1);
+      }
+      #featuredProjects .container .img_border_landscape .overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 3rem 0;
+        z-index: 100;
+      }
+
+      #featuredProjects .container .img_border_landscape .overlay h3 {
+        color: white;
+        font-family: "mont_regular" !important;
+        text-transform: uppercase;
+        text-align: center;
+      }
+      #featuredProjects .container .img_border_landscape .overlay button {
+        color: #00355a;
+        background-color: white;
+        border: none;
+        padding: 0.3rem 1.5rem;
+        text-transform: uppercase;
+        font-family: "subheading_font" !important;
+      }
+      #featuredProjects .container .img_border {
+        width: 100%;
+        /*height: 30rem;*/
+
+        /*height: 38rem;*/
+        overflow: hidden;
+        position: relative;
+      }
+
+      @media screen and (min-width: 545px) {
+        #featuredProjects .container .img_border {
+          width: 100%;
+          height: 30rem;
+
+          overflow: hidden;
+          position: relative;
+        }
+      }
+      #featuredProjects .container .img_border .overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 3rem 0;
+        z-index: 100;
+      }
+      #featuredProjects .container .img_border .overlay h3 {
+        color: white;
+        /*  font-weight: lighter;*/
+        text-transform: uppercase;
+        text-align: center;
+        font-family: "mont_regular" !important;
+      }
+      #featuredProjects .container .img_border .overlay button {
+        color: #00355a;
+        background-color: white;
+        border: none;
+        padding: 0.3rem 1.5rem;
+        text-transform: uppercase;
+      }
+      #featuredProjects .container .img_border img {
+        width: 100%;
+        height: 100%;
+        transition: 0.3s;
+        /*-o-object-fit: cover;*/
+        /*   object-fit: cover;*/
+      }
+      #featuredProjects .container .img_border_sm {
+        width: 100%;
+        height: 25rem;
+        position: relative;
+      }
+      #featuredProjects .container .img_border_sm .overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 3rem 0;
+        text-align: center;
+      }
+      #featuredProjects .container .img_border_sm .overlay h3 {
+        color: white;
+        font-weight: lighter;
+        text-transform: uppercase;
+      }
+      #featuredProjects .container .img_border_sm .overlay button {
+        color: #00355a;
+        background-color: white;
+        border: none;
+        padding: 0.3rem 1.5rem;
+        text-transform: uppercase;
+      }
+      #featuredProjects .container .img_border_sm img {
+        width: 100%;
+        height: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+      }
+      /* ////////////////////////////////////////////////////////////////////////////////////////// */
+      .background-container {
+            background-image: url('./assets/COP\ banner\ image.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .content-container {
+            background-color: rgba(255, 255, 255, 0.8); /* White background with some transparency */
+            padding: 20px;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="header">
+        <img src="./assets/Co_Own logo-01.png" />
+      </div>
+
+      <div class="landing">
+        <h1 class="heading">
+          DON'T HAVE <br />
+          ENOUGH MONEY <br />TO INVEST IN<br />COMMERCIAL PROPERTY
+        </h1>
+     
+        <p class="description">We have an Affordable option for you.</p>
+        <a href="your-link-here" class="btn">Learn More</a>
+      </div>
+<!-- ////////////////////////////////////////////////////// -->
+
+<section id="featuredProjects">
+    <div class="background-container">
+    <div class="container content-container">
+      <div class="row px-4">
+        <div class="col-md-6 col-12">
+          <!-- <h6>
+            Projects
+            <hr />
+          </h6> -->
+          <h2>featured projects</h2>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-lg-8 col-md-8 col-12 mb-4">
+          <div class="img_border_landscape">
+            <div class="overlay">
+              <h3 style="font-size: 13px">The grande</h3>
+            </div>
+            <picture>
+              <source media="(max-width:555px)" src="./assets/grande.jpg" />
+              <img src="./assets/grande.jpg" class="img-fluid lazy" alt="" />
+            </picture>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-12 mb-4">
+          <div class="img_border">
+            <div class="overlay">
+              <h3 style="font-size: 13px">the marena grande</h3>
+            </div>
+            <img src="./assets/piano.jpg" class="img-fluid lazy" alt="" />
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-12 mb-4">
+          <div class="img_border">
+            <div class="overlay">
+              <h3 style="font-size: 13px">grande hotel 2</h3>
+            </div>
+            <img src="./assets/grande-hotel.jpg" class="img-fluid lazy" alt="" />
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-12 mb-4">
+          <div class="img_border">
+            <div class="overlay">
+              <h3 style="font-size: 13px">leaf</h3>
+            </div>
+            <img src="./assets/leaf.jpg" class="img-fluid lazy" alt="" />
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-12 mb-4">
+            <div class="img_border">
+              <div class="overlay">
+                <h3 style="font-size: 13px">leaf</h3>
+              </div>
+              <img src="./assets/marena.jpg" class="img-fluid lazy" alt="" />
+            </div>
+          </div>
+        <!-- Add more image columns as needed -->
+      </div>
+    </div>
+    </div>
+  </section>
+  
+<!-- ////////////////////////////////////////////////////// -->
+      <!-- <section id="featuredProjects">
+        <div class="container">
+          <div class="row px-4">
+            <div class="col-md-6 col-6">
+              <h6>
+                Projects
+                <hr />
+              </h6>
+            
+              <h2>featured projects</h2>
+            </div>
+          </div>
+          <div
+            id="carouselExampleControls3"
+            class="carousel slide mt-2 px-4"
+            data-ride="carousel"
+          >
+            <div class="carousel-inner carousel-inner3">
+              <div class="carousel-item active">
+                <div class="row gx-4 mb-md-4 mt-4">
+                  <a
+                    href="#"
+                    class="col-lg-8 col-md-8 col-12 d-flex flex-column justify-content-center"
+                    style="padding: 10px; padding-top: 15px"
+                  >
+                    <div class="img_border_landscape">
+                      <div class="overlay">
+                        <h3 style="font-size: 13px">The grande</h3>
+                       
+                      </div>
+                      <picture>
+                        <source
+                          media="(max-width:555px)"
+                          src="./assets/grande.jpg" />
+                        <img
+                          src="./assets/grande.jpg"
+                          class="img-fluid lazy"
+                          alt=""
+                      /></picture>
+                    </div>
+                  </a>
+
+                  <a
+                    href="#"
+                    class="col-md-4 col-12"
+                    style="padding: 10px; padding-top: 15px"
+                  >
+                    <div class="img_border">
+                      <div class="overlay">
+                        <h3 style="font-size: 13px">the marena grande</h3>
+                   
+                      </div>
+                      <img
+                        src="./assets/piano.jpg"
+                        class="img-fluid lazy"
+                        alt=""
+                      />
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <div class="row gx-4 mb-md-4 mt-4">
+                  <a
+                    href="#"
+                    class="col-md-8 col-12 d-flex flex-column justify-content-center"
+                    style="padding: 10px; padding-top: 15px"
+                  >
+                    <div class="img_border_landscape">
+                      <div class="overlay">
+                        <h3 style="font-size: 13px">grande hotel 2</h3>
+                       
+                      </div>
+                      <img
+                        src="./assets/grande-hotel.jpg"
+                        class="img-fluid lazy"
+                        alt=""
+                      />
+                    </div>
+                  </a>
+
+                  <a
+                    href="#"
+                    class="col-md-4 col-12"
+                    style="padding: 10px; padding-top: 15px"
+                  >
+                    <div class="img_border">
+                      <div class="overlay">
+                        <h3 style="font-size: 13px">leaf</h3>
+                       
+                      </div>
+                      <img
+                        src="./assets/leaf.jpg"
+                        class="img-fluid lazy"
+                        alt=""
+                      />
+                    </div>
+                  </a>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </section> -->
+   
+    </div>
+  </body>
+</html>
